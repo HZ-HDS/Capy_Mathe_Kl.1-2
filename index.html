@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Capys Mathe-Regenwald</title>
+<meta name="description" content="Spielerische Matheübungen für Klasse 1 und 2 mit Capy, dem Capybara-Lernbuddy.">
+<meta name="theme-color" content="#bfe6ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Capy Mathe">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Capys Mathe-Regenwald: alles läuft lokal im Browser, keine Daten verlassen das Gerät. -->
+<div id="glitter" aria-hidden="true"></div>
+
+<header class="topbar">
+  <button class="brand" id="homeBtn" aria-label="Zur Abenteuer-Karte">
+    <span class="brand-capy" id="brandCapy"></span>
+    <span class="brand-text">Capys Mathe-Regenwald</span>
+  </button>
+  <div class="counters">
+    <span class="counter" title="Mutmach-Sterne"><span class="ci">⭐</span><b id="cStars">0</b></span>
+    <span class="counter" title="Capy-Geld"><span class="ci">🪙</span><b id="cCoins">0</b></span>
+    <span class="counter" title="Edelsteine"><span class="ci">💎</span><b id="cGems">0</b></span>
+    <button class="icon-btn" id="soundBtn" aria-label="Ton an oder aus">🔊</button>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<nav class="tabbar" id="tabbar" aria-label="Hauptbereiche">
+  <button data-go="map" class="tab"><span>🗺️</span>Abenteuer</button>
+  <button data-go="room" class="tab"><span>🏡</span>Mein Capy</button>
+  <button data-go="stories" class="tab"><span>📖</span>Geschichten</button>
+  <button data-go="treasure" class="tab"><span>💎</span>Schätze</button>
+  <button data-go="parents" class="tab"><span>👪</span>Eltern</button>
+</nav>
+
+<!-- Capy, der Lernbuddy, mit Sprechblase -->
+<aside class="buddy" id="buddy" aria-live="polite">
+  <div class="bubble" id="bubble" hidden>
+    <p id="bubbleText"></p>
+    <button class="icon-btn small" id="speakBtn" aria-label="Vorlesen">🔈</button>
+  </div>
+  <button class="buddy-capy" id="buddyCapy" aria-label="Capy antippen"></button>
+</aside>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<!-- Datendateien (Inhalte können hier leicht ergänzt werden) -->
+<script src="js/data/phrases.js"></script>
+<script src="js/data/stories.js"></script>
+<script src="js/data/rewards-data.js"></script>
+<script src="js/data/parents-data.js"></script>
+<!-- Kernmodule -->
+<script src="js/core/util.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/sound.js"></script>
+<script src="js/core/capy.js"></script>
+<script src="js/core/visuals.js"></script>
+<script src="js/core/pdf.js"></script>
+<!-- Übungen: je Welt ein Modul -->
+<script src="js/exercises/common.js"></script>
+<script src="js/exercises/world1.js"></script>
+<script src="js/exercises/world2.js"></script>
+<script src="js/exercises/world3.js"></script>
+<!-- Lernlogik und Bildschirme -->
+<script src="js/core/coach.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/screens/intro.js"></script>
+<script src="js/screens/map.js"></script>
+<script src="js/screens/rewards.js"></script>
+<script src="js/screens/parents.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
